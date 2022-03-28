@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AccountsPage;
 import pages.CreateAccountPage;
@@ -20,13 +21,7 @@ public class SalesForceAccountTest extends BaseTest{
         accountsPage.openCreateAccountModal();
         CreateAccountPage createAccountPage = new CreateAccountPage(driver);
         createAccountPage.saveNewAccountForm(GetNewAccountModel.getAccountWithAllFields());
-        System.out.println(" ");
-
-
-
-
-
-
+        Assert.assertTrue(createAccountPage.waitForVisibilityOfToast());
     }
 
 }

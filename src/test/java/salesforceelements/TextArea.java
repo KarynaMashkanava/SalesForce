@@ -8,7 +8,7 @@ public class TextArea {
     String locator = "//div[./label[normalize-space() = '%s']]/textarea";
     WebDriver driver;
 
-    public TextArea(String label, WebDriver driver) {
+    public TextArea(WebDriver driver, String label) {
         this.label = label;
         this.driver = driver;
     }

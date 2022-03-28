@@ -12,6 +12,5 @@ public class GenerateFakeMessage {
     public static String getPhone() {
         Faker faker = new Faker();
         return faker.phoneNumber().phoneNumber();
-
     }
 }

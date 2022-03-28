@@ -10,8 +10,7 @@ public class ChromeDriverManager extends DriverManager {
     @Override
     public void createDriver() {
         PropertiesManager propertiesManager = new PropertiesManager();
-        System.setProperty("webdriver.chrome.driver", propertiesManager.get("PATH_TO_CHROME_DRIVER"));
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", propertiesManager.get("driver.chrome"));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         driver = new ChromeDriver(options);

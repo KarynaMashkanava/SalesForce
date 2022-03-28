@@ -10,7 +10,7 @@ public class PropertiesManager {
     private Properties prop;
 
     public PropertiesManager() {
-        propertyFilePath = System.getProperty("user.dir") + "/src/test/resources/config.properties";
+        propertyFilePath = System.getProperty("user.dir") + "/src/test/java/resources/config.properties";
     }
 
     private void loadData() {

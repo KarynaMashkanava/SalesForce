@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class InputField {
     WebDriver driver;
     String label;
-    String inputXpath = "/article[contains(., 'New Account')]//label[contains(., '%s')]/following-sibling::input";
+    String inputXpath = "//article[contains(., 'New Account')]//label[contains(., '%s')]/following-sibling::input";
 
     public InputField(WebDriver driver, String label) {
         this.driver = driver;
