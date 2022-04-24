@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.extern.log4j.Log4j;
 import models.SalesForceAccountModel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -8,6 +9,7 @@ import salesforceelements.DropDownList;
 import salesforceelements.InputField;
 import salesforceelements.TextArea;
 
+@Log4j
 public class CreateAccountPage extends BasePage {
 
     private By INPUT_SEARCH = By.xpath("//article[contains(., 'New Account')]//label[contains(., 'Account Name')]/following-sibling::div//input");
@@ -19,6 +21,7 @@ public class CreateAccountPage extends BasePage {
     }
 
     public void saveNewAccountForm(SalesForceAccountModel accountModel) {
+        log.info("type user information");
         driver.findElement(INPUT_SEARCH).sendKeys(accountModel.getAccountName());
         new InputField(driver, "Phone").inputText(accountModel.getPhone());
         new InputField(driver, "Fax").inputText(accountModel.getFax());
@@ -38,10 +41,13 @@ public class CreateAccountPage extends BasePage {
         new InputField(driver, "Billing Country").inputText(accountModel.getBillingCountry());
         new InputField(driver, "Shipping Zip/Postal Code").inputText(accountModel.getShippingZipCode());
         new InputField(driver, "Shipping Country").inputText(accountModel.getShippingCountry());
+        log.info("click save button");
         driver.findElement(SAVE_BUTTON).click();
+        log.trace("account form was saved");
     }
 
     public boolean waitForVisibilityOfToast() {
+        log.debug("waiting for toast");
         try {
             driver.findElement(TOAST_SUCCESS);
             return true;
