@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,11 +16,13 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    @Step("open SF page")
     public void openPage() {
         log.info("opening salesforce page");
         driver.get(WebUrls.SALESFORCE_URL);
     }
 
+    @Step("login as {username} / {password}")
     public void login(String username, String password) {
         log.info("type user name " + username);
         driver.findElement(USERNAME_INPUT).sendKeys(username);

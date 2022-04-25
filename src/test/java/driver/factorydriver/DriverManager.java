@@ -21,10 +21,6 @@ public abstract class DriverManager {
         driver.manage().timeouts().implicitlyWait(WebTimeouts.IMPLICIT_TIMEOUT, TimeUnit.SECONDS);
     }
 
-    public void removeTimeout() {
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-    }
-
     public void maximize() {
         driver.manage().window().maximize();
     }
