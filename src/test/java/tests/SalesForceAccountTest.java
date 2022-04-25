@@ -1,6 +1,7 @@
 package tests;
 
 
+import io.qameta.allure.Description;
 import lombok.extern.log4j.Log4j;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,6 +16,7 @@ public class SalesForceAccountTest extends BaseTest{
     private static String PASSWORD = "Test1234!";
 
     @Test
+    @Description("Create account test")
     public void createAccountTest() {
         log.info("starting test: create account test");
         LoginPage loginPage = new LoginPage(driver);

@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j;
 import models.SalesForceAccountModel;
 import org.openqa.selenium.By;
@@ -20,6 +21,7 @@ public class CreateAccountPage extends BasePage {
         super(driver);
     }
 
+    @Step("fill in account form")
     public void saveNewAccountForm(SalesForceAccountModel accountModel) {
         log.info("type user information");
         driver.findElement(INPUT_SEARCH).sendKeys(accountModel.getAccountName());
